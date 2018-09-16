@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eczane Sorgu</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+		<input id="district" type="text" name="district">
+		<button onclick="run()">Getir</button>
+	<div id="result"></div>
+
+<script>
+function run(){
+	$.post("curl.php", {district: $("#district").val()}, function(result){
+        $("#result").html(result);
+    });
+}
+</script>
+</body>
+</html>
